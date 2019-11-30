@@ -1,0 +1,91 @@
+/**index.wxss**/
+/* 搜索 */
+.search-container{
+  height: 48rpx;
+  background: #f2f4f7;
+  margin: 12rpx;
+  border-radius: 8rpx;
+  position: relative;
+}
+.search-container image{
+  width: 36rpx;
+  height: 36rpx;
+  margin: 6rpx;
+  float:left;
+}
+.search-container text{
+  font-size: 24rpx;
+  margin-top: 8rpx;
+  left: 50%;
+  margin-left: -48rpx;
+  position: absolute;
+  color: #8a8a8a;
+}
+/* 标签 */
+.tab-container scroll-view{
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f2f4f7;
+  font-size: 16px; 
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  z-index: 99;
+}
+.tab-item{
+  margin:0 36rpx;
+  display: inline-block;
+  color: #666;
+}
+.tab-item.active{
+  color: #000;
+  position: relative;
+  font-weight: bold;
+}
+.tab-item.active:after{ 
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 52rpx;
+  background: #000;
+  position: absolute; 
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+/* 轮播图 */
+.swiper-container{
+  width: 100%;
+  height: 310rpx;
+  position: relative;
+}
+.swiper-container .swiper{
+  height: 100%;
+}
+.swiper-container .swiper .img{
+  width: 100%;
+  height: 100%;
+} 
+/* 列表 */
+.grid-container{
+  display:flex; 
+  flex-direction:row; 
+  flex-wrap:wrap; 
+  background: #f2f4f7;
+  padding-top: 12rpx;
+}
+.grid-container .grid-item{
+  flex-shrink:0; 
+  box-sizing:border-box; 
+  width:50%;
+  height:365rpx; 
+  padding:1rpx;
+}
+.grid-container .grid-item image{
+  width:100%; 
+  height:100%;
+}

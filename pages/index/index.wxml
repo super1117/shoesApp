@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<!-- 搜索框 -->
+<view class="search-container">
+  <image src="../../images/ic_search.png"></image>
+  <text>搜索单品</text>
+</view>
+<view class="tab-container">
+  <scroll-view scroll-x="true" scroll-left="0">
+    <view class="tab-item {{currentTab == index?'active':''}}" wx:for="{{tabs}}" wx:for-index="index" wx:for-item="item" data-position="{{index}}" bindtap="tabClickListener">{{item}}</view>
+  </scroll-view>
+</view>
+<!-- 轮播图 -->
+<view class="swiper-container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" class="img" bindtap="swipclick" mode="center"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 列表 -->
+<view class="grid-container">
+  <view class="grid-item" wx:for="{{gridData}}" wx:for-index="index" wx:for-item="item" bindtap="itemClickListener">
+    <image src="{{item}}"/>
+  </view>
+</view>

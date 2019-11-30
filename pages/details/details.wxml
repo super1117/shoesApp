@@ -1,0 +1,64 @@
+<!--pages/details/details.wxml-->
+<!-- 轮播图 -->
+<view class="swiper-container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" class="img" bindtap="swipclick" mode="center"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 产品名称 -->
+<view style="text-align:center;font-size:36rpx;margin-top:12rpx;">Converse First String Chuck Taylor All Star 1970s Olive Green 2018年新款</view>
+<!-- 价格 -->
+<view style="text-align:center;padding:12rpx;">
+  <text style="font-weight:bold;font-size:24rpx;">￥</text>
+  <text style="font-weight:bold;font-size:36rpx;">509</text>
+</view>
+<!-- 选择尺码 -->
+<view class="line"/> 
+<view class="details-size" bindtap="onSizeCheckedListener">
+  <text class="select-size">选择尺码</text>
+  <view class="select-size-txt">
+    <text>请选择尺码</text>
+    <image style="width:20rpx;height:20rpx;margin-left:8rpx;" src="../../images/ic_go.png"/>
+  </view>
+</view>
+<view class="line-12"/>
+<!-- 规格 -->
+<view class="details-specifications">
+  <text class="ds-name">配色\n货号\n官方价格\n发售日期</text>
+  <text class="ds-value">绿\n162052c\n￥509仅供参考\n2017.11.01</text>
+</view>
+<view class="line-12"/>
+<rich-text nodes="{{nodes}}"/>
+<!-- 购买按钮 -->
+<view class="details-buy">立即购买</view>
+<!-- 底部弹出层 -->
+<view class='{{bg}}' style="visibility:{{backgroundVisible ? 'visible':'hidden'}}"/>
+<view class="element-wrapper" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}">
+  <view class="element">
+      <view class="element-header">
+        <image class="left-ic" src="http://www.315fangwei.com/uploadsabcd/allimg/170303/151935J04-0.jpg"/>
+        <image class="right-bt" catchtap="hidden" src="../../images/ic_close.png"/>
+        <view class="element-header-right">
+          <view class="element-header-price">
+            <text style="font-weight:bold;font-size:24rpx;">￥</text>
+            <text style="font-weight:bold;font-size:36rpx;">509</text>
+            <view style="color:#666;font-size:24rpx;margin-top:12rpx;margin-left:3rpx;">选择尺码</view>
+          </view>
+        </view>
+        <view style="clear:both;"/>
+      </view>
+      <scroll-view class="element-grid" scroll-y='true' catchtouchmove="touchHandler">
+        <view class="grid-item" wx:for="{{[0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9]}}" wx:for-index="index" wx:for-item="item">
+          <view class="item-child">
+            <view style="font-weight:bold;font-size:28rpx;">34.5</view>
+            <view style="color:#666;font-size:24rpx;">￥509</view>
+          </view>
+        </view>
+        <view style="clear:both;height:160rpx;width:100%;"/>
+      </scroll-view>
+  </view>
+</view>
